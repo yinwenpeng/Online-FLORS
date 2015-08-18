@@ -32,3 +32,6 @@ Command example for training (replicate the results on dev sets of SANCL):
 Command example for online predicting (replicate the results on dev sets of SANCL):
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
+
+Contact:
+             Wenpeng Yin (mr.yinwenpeng@gmail.com)
