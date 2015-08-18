@@ -33,5 +33,17 @@ Command example for online predicting (replicate the results on dev sets of SANC
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
 
+Citation:
+ 
+          @inproceedings{wenpeng-2015-flors,
+          title={Online Updating of Word Representations for Part-of-Speech Taggging},
+          author={Yin, Wenpeng; Schnabel, Tobias; Schütze, Hinrich},
+          booktitle={Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+          year={2015}
+          }
+
+
+
+
 Contact:
              Wenpeng Yin (mr.yinwenpeng@gmail.com)
