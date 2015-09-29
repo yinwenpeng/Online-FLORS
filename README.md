@@ -29,6 +29,8 @@ Command example for training (replicate the results on dev sets of SANCL):
 
     java -jar train_20150414.jar -mode train -trainFile ontonotes-wsj-train -unlabeledData wsj_ul.100k gweb-newsgroups.unlabeled gweb-reviews.unlabeled gweb-weblogs.unlabeled gweb-answers.unlabeled gweb-emails.unlabeled gweb-wsj.unlabeled -labeledData gweb-newsgroups-test gweb-reviews-test gweb-weblogs-test gweb-answers-test gweb-emails-test gweb-wsj-test -bigData English_Gigawords_500k.txt -pre prefix_
 
+Warning: the training needs lots of memory, we suggest to use "java -Xmx300G -Xms300G -XX:-UseGCOverheadLimit -jar....." according to how big  your training set and unlabeled data for representation learning are.
+
 Command example for online predicting (replicate the results on dev sets of SANCL):
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
