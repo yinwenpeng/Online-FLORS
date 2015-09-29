@@ -33,6 +33,14 @@ Command example for online predicting (replicate the results on dev sets of SANC
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
 
+How to use the released pretrained model:
+
+Download the zip file, unzip it, then just set option "-pre" to "big_big_"
+
+    java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre big_big_ -out output.txt
+
+This "big_big_" model comes from above "Command example for training (replicate the results on dev sets of SANCL)".
+
 Data format:
 
 1) labeled file, e.g., "ontonotes-wsj-train" after "-trainFile" or "gweb-newsgroups-test" after "-labeledData" in above command line
@@ -89,6 +97,8 @@ This file contains multiple columns: rowToken, known?, goldTag, predictedTag, ta
 		known?=0 or 1, "0" means unkown word, "1" means known word.
 		tagFlag=u or k or 0, "u" means unknown tag for a known word, "k" means known tag for known word, "0" means tag for unknown word.
 		wrong="wrong" or empty. "wrong" means false prediction. Otherwise, the column is left empty
+
+
 
 Citation:
  
