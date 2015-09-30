@@ -29,7 +29,9 @@
 
     java -jar train_20150414.jar -mode train -trainFile ontonotes-wsj-train -unlabeledData wsj_ul.100k gweb-newsgroups.unlabeled gweb-reviews.unlabeled gweb-weblogs.unlabeled gweb-answers.unlabeled gweb-emails.unlabeled gweb-wsj.unlabeled -labeledData gweb-newsgroups-test gweb-reviews-test gweb-weblogs-test gweb-answers-test gweb-emails-test gweb-wsj-test -bigData English_Gigawords_500k.txt -pre prefix_
 
-Warning: the training needs lots of memory, we suggest to use "java -Xmx300G -Xms300G -XX:-UseGCOverheadLimit -jar....." according to how big  your training set and unlabeled data for representation learning are.
+**Warning**: the training needs lots of memory, we suggest to use "java -Xmx300G -Xms300G -XX:-UseGCOverheadLimit -jar....." according to how big  your training set and unlabeled data for representation learning are.
+
+Basically, for training we only need "-trainFile". *"-unlabeledData" and "-labeledData" and "-bigData" are only used for robust learning of word representations*.
 
 #####Output of training:
 
@@ -48,7 +50,7 @@ All of them are necessary for predictor.
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
 
-Here, "-labeled 1" means we predict a file which already has gold tags. So, just set "-labeled 0" if you want to predict a general file with format "**Unlabeled big data**" below. "-pre prefix" used to load the model, i.e., the ``**Output of training**''.
+Here, "-labeled 1" means we predict a file which already has gold tags. So, just set "-labeled 0" if you want to predict a general file with format "**Unlabeled big data**" below. "-pre prefix_" used to load the model, i.e., the ``**Output of training**''.
 
 ####How to use the released pretrained model:
 
@@ -56,7 +58,7 @@ Download the zip file, unzip it, then just set option "-pre" to "big_big_"
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre big_big_ -out output.txt
 
-This "big_big_" model comes from above "Command example for training (replicate the results on dev sets of SANCL)".
+This "big_big_" model comes from above "Command example for training (replicate the results on dev sets of SANCL)". Basically, **big** training data and **big** unlabeled data.
 
 ####Data format:
 
