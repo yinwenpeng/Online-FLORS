@@ -1,12 +1,12 @@
 # Online-FLORS
 
-Brief Intro: 
+####Brief Intro: 
 
    FLORS performs good for domain adaptation. Its online version first trains a model on some training data (with optionally auxiliary
    labeled or unlabeled data only for robust representation learning); during predicting, for an incoming sentence, the 
    model updates word representations based on the info of that sentence, then predicts this sentence. 
 
-Usage:
+####Usage:
 
     -h: for help
 		-mode: 'train' or 'predict'
