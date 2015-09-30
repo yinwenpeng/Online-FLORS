@@ -48,7 +48,7 @@ All of them are necessary for predictor.
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
 
-Here, ``-labeled 1'' means we predict a file which already has gold tags. So, just set ``-labeled 0'' if you want to predict a general file with format ``**Unlabeled big data**'' below. ``-pre prefix'' used to load the model, i.e., the ``**Output of training**''.
+Here, "-labeled 1" means we predict a file which already has gold tags. So, just set ``-labeled 0'' if you want to predict a general file with format ``**Unlabeled big data**'' below. ``-pre prefix'' used to load the model, i.e., the ``**Output of training**''.
 
 ####How to use the released pretrained model:
 
