@@ -9,7 +9,7 @@
 ####Usage:
 
     -h: for help
-		-<strong>mode</strong>: 'train' or 'predict'
+		-mode: 'train' or 'predict'
 		-trainFile: the names or paths for the training labeled files, separated by space
 		-labeledData: optional; supporting tagged files for making the model more robust, separated by tab
 		-unlabeledData: optional; supporting untagged files for making the model more robust, separated by tab
@@ -48,6 +48,8 @@ All of them are necessary for predictor.
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
 
+Here, ``-labeled 1'' means we predict a file which already has gold tags. So, just set ``-labeled 0'' if you want to predict a general file with format ``**Unlabeled big data**'' below. ``-pre prefix'' used to load the model, i.e., the ``**Output of training**''.
+
 ####How to use the released pretrained model:
 
 Download the zip file, unzip it, then just set option "-pre" to "big_big_"
@@ -58,7 +60,7 @@ This "big_big_" model comes from above "Command example for training (replicate 
 
 ####Data format:
 
-1) **labeled file**, e.g., "ontonotes-wsj-train" after "-trainFile" or "gweb-newsgroups-test" after "-labeledData" in above command line
+1) **Labeled File**, e.g., "ontonotes-wsj-train" after "-trainFile" or "gweb-newsgroups-test" after "-labeledData" in above command line
 
 The standard format in SANCL and WSJ. i.e., file contains two columns, first column is single words, second column is gold tag, word and tag are separated by a \tab. There is one empty line between sentences. For example:
 
@@ -92,7 +94,7 @@ The standard format in SANCL and WSJ. i.e., file contains two columns, first col
 
 				File with sentences, each sentence lies in one row, and words are separated by one \tab. 
 
-3) **unlabeled big data**. e.g., "English_Gigawords_500k.txt" after "-bigData"
+3) **Unlabeled Big Data**. e.g., "English_Gigawords_500k.txt" after "-bigData"
 
 				The same with "Unlabeled Data", except for replacing \tab with a space
 
