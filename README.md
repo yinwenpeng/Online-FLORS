@@ -31,6 +31,19 @@ Command example for training (replicate the results on dev sets of SANCL):
 
 Warning: the training needs lots of memory, we suggest to use "java -Xmx300G -Xms300G -XX:-UseGCOverheadLimit -jar....." according to how big  your training set and unlabeled data for representation learning are.
 
+Output of training:
+
+It will generate six files:
+
+				prefix_leftVector.txt
+				prefix_rightVector.txt
+				prefix_standardFeatureName.txt
+				prefix_standardModel.txt
+				prefix_tagList.txt
+				prefix_wordToRowCol.txt
+
+All of them are necessary for predictor.
+
 Command example for online predicting (replicate the results on dev sets of SANCL):
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
