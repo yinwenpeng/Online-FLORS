@@ -25,13 +25,13 @@
 
 
 
-Command example for training (replicate the results on dev sets of SANCL):
+####Command example for training (replicate the results on dev sets of SANCL):
 
     java -jar train_20150414.jar -mode train -trainFile ontonotes-wsj-train -unlabeledData wsj_ul.100k gweb-newsgroups.unlabeled gweb-reviews.unlabeled gweb-weblogs.unlabeled gweb-answers.unlabeled gweb-emails.unlabeled gweb-wsj.unlabeled -labeledData gweb-newsgroups-test gweb-reviews-test gweb-weblogs-test gweb-answers-test gweb-emails-test gweb-wsj-test -bigData English_Gigawords_500k.txt -pre prefix_
 
 Warning: the training needs lots of memory, we suggest to use "java -Xmx300G -Xms300G -XX:-UseGCOverheadLimit -jar....." according to how big  your training set and unlabeled data for representation learning are.
 
-Output of training:
+#####Output of training:
 
 It will generate six files:
 
@@ -44,11 +44,11 @@ It will generate six files:
 
 All of them are necessary for predictor.
 
-Command example for online predicting (replicate the results on dev sets of SANCL):
+####Command example for online predicting (replicate the results on dev sets of SANCL):
 
     java -jar predict_online_1.jar -mode predict -predictFile labeled_to_be_predict.txt -labeled 1 -update 1 -pre prefix_ -out output.txt
 
-How to use the released pretrained model:
+####How to use the released pretrained model:
 
 Download the zip file, unzip it, then just set option "-pre" to "big_big_"
 
@@ -56,7 +56,7 @@ Download the zip file, unzip it, then just set option "-pre" to "big_big_"
 
 This "big_big_" model comes from above "Command example for training (replicate the results on dev sets of SANCL)".
 
-Data format:
+####Data format:
 
 1) labeled file, e.g., "ontonotes-wsj-train" after "-trainFile" or "gweb-newsgroups-test" after "-labeledData" in above command line
 
@@ -115,7 +115,7 @@ This file contains multiple columns: rowToken, known?, goldTag, predictedTag, ta
 
 
 
-Citation:
+####Citation:
  
           @inproceedings{wenpeng-2015-flors,
           title={Online Updating of Word Representations for Part-of-Speech Taggging},
