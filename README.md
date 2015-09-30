@@ -9,7 +9,7 @@
 ####Usage:
 
     -h: for help
-		-mode: 'train' or 'predict'
+		-<strong>mode</strong>: 'train' or 'predict'
 		-trainFile: the names or paths for the training labeled files, separated by space
 		-labeledData: optional; supporting tagged files for making the model more robust, separated by tab
 		-unlabeledData: optional; supporting untagged files for making the model more robust, separated by tab
