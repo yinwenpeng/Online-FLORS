@@ -11,9 +11,9 @@
     -h: for help
 		-mode: 'train' or 'predict'
 		-trainFile: the names or paths for the training labeled files, separated by space
-		-labeledData: optional; supporting tagged files for making the model more robust, separated by tab
-		-unlabeledData: optional; supporting untagged files for making the model more robust, separated by tab
-		-bigData: optional; supporting untagged files for making the model more robust, separated by space
+		-labeledData: optional; supporting tagged files for making the model more robust
+		-unlabeledData: optional; supporting untagged files for making the model more robust, separated by tab or space
+		-bigData: optional; supporting untagged files for making the model more robust, separated by space or tab
 		-window: optional; length of window (default is '5')
 		-sampleNo: (any number vs. 'all'); optional; the number of tokens you want to use for training; default is 'all'
 		-labeled: (1 vs. 0); optional; predict the POS taggs for tagged data? Default is '0'
@@ -94,11 +94,11 @@ The standard format in SANCL and WSJ. i.e., file contains two columns, first col
 
 2) **Unlabeled Data**. e.g., "wsj_ul.100k" after "-unlabeledData" 
 
-				File with sentences, each sentence lies in one row, and words are separated by one \tab. 
+				File with sentences, each sentence lies in one row, and words are separated by tab or space. 
 
 3) **Unlabeled Big Data**. e.g., "English_Gigawords_500k.txt" after "-bigData"
 
-				The same with "Unlabeled Data", except for replacing \tab with a space
+				The same format with "Unlabeled Data"
 
 
 4) **The format of "output.txt" in prediction**, i.e., "-out output.txt"
@@ -117,7 +117,7 @@ This file contains multiple columns: rowToken, known?, goldTag, predictedTag, ta
 		tagFlag=u or k or 0, "u" means unknown tag for a known word, "k" means known tag for known word, "0" means tag for unknown word.
 		wrong="wrong" or empty. "wrong" means false prediction. Otherwise, the column is left empty
 
-
+If predict unlabeled data, the output.txt has only two columns: first is word column, second is tag column; separated by tab
 
 ####Citation:
  
